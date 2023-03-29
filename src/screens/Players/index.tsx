@@ -6,24 +6,34 @@ import { HighLight } from "@components/HighLight";
 import { Input } from "@components/Input";
 import { ListEmpty } from "@components/ListEmpty";
 import { PlayerCard } from "@components/PlayerCard";
+import { useNavigation, useRoute } from "@react-navigation/native";
 
 import { useState } from "react";
 import { FlatList } from "react-native";
 
 import { Container, Form, HeaderList, NumberOfPlayers } from "./styles";
 
+type RouterParams = {
+  group: string;
+};
+
 export function Players() {
   const [team, setTeam] = useState("time b");
   const [players, setPlayers] = useState([]);
 
+  const navigation = useNavigation();
+  const router = useRoute();
+  const { group } = router.params as RouterParams;
+
+  function handleBackPage() {
+    navigation.goBack();
+  }
+
   return (
     <Container>
-      <Header showBackButton />
+      <Header showBackButton onPress={handleBackPage} />
 
-      <HighLight
-        title="Nome da turma"
-        subTitle="adicione a galera e separe os times"
-      />
+      <HighLight title={group} subTitle="adicione a galera e separe os times" />
 
       <Form>
         <Input placeholder="Nome do participante" autoCorrect={false} />
