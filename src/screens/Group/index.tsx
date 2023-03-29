@@ -21,6 +21,7 @@ export function Group() {
       <FlatList
         data={groups}
         keyExtractor={(item) => item}
+        showsVerticalScrollIndicator={false}
         renderItem={({ item }) => <GroupCard title={item} />}
         contentContainerStyle={groups.length === 0 && { flex: 1 }}
         ListEmptyComponent={
