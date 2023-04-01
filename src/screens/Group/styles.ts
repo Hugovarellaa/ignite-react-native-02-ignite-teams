@@ -1,10 +1,8 @@
 import styled from "styled-components/native";
 
 export const Container = styled.View`
-  background: #000;
   flex: 1;
-  align-items: center;
-  justify-content: center;
+  background: ${({ theme }) => theme.COLORS.GRAY_600};
 `;
 
 export const Title = styled.Text`
