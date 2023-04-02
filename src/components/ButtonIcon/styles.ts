@@ -8,15 +8,6 @@ interface Props {
   type: ButtonIconTypesStylesProps;
 }
 
-export const Form = styled.View`
-  width: 100%;
-  background: ${({ theme }) => theme.COLORS.GRAY_700};
-  flex-direction: row;
-
-  justify-content: center;
-  border-radius: 6px;
-`;
-
 export const ButtonIconContainer = styled(TouchableOpacity)`
   width: 56px;
   height: 56px;
