@@ -31,10 +31,10 @@ export function Players() {
   const router = useRoute();
   const { group } = router.params as RouteParams;
 
-  const { goBack } = useNavigation();
+  const { navigate } = useNavigation();
 
   function handleGoBack() {
-    goBack();
+    navigate("Group");
   }
 
   return (

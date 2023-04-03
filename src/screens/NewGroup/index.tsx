@@ -3,7 +3,10 @@ import { Header } from "@components/Header";
 import { HighLight } from "@components/HighLight";
 import { Input } from "@components/Input";
 import { useNavigation } from "@react-navigation/native";
+import { groupCreate } from "@storage/group/groupCreate";
+import { AppError } from "@utils/AppError";
 import { useState } from "react";
+import { Alert } from "react-native";
 import { Icon, NewGroupContainer, NewGroupContent } from "./styles";
 
 export function NewGroup() {
@@ -15,7 +18,25 @@ export function NewGroup() {
     goBack();
   }
 
-  function handleCreateGroup() {
+  async function handleCreateGroup() {
+    if (group.trim() === "") {
+      return Alert.alert("Novo Grupo", "Informe o nome da turma.");
+    }
+
+    try {
+      await groupCreate(group);
+    } catch (err) {
+      if (err instanceof AppError) {
+        Alert.alert(
+          "Novo Grupo",
+          "Não foi possível criar um novo grupo com esse nome, ele ja existir."
+        );
+
+        return;
+      }
+      console.log(err);
+    }
+
     navigate("Players", { group });
   }
 
