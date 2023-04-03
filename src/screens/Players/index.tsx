@@ -6,6 +6,7 @@ import { HighLight } from "@components/HighLight";
 import { Input } from "@components/Input";
 import { ListEmpty } from "@components/ListEmpty";
 import { PlayerCard } from "@components/PlayerCard";
+import { useNavigation } from "@react-navigation/native";
 import { useState } from "react";
 import { FlatList } from "react-native";
 import { Form, HeaderList, NumberOfPlayers, PlayersContainer } from "./styles";
@@ -23,9 +24,15 @@ export function Players() {
     "Marcos",
   ]);
 
+  const { goBack } = useNavigation();
+
+  function handleGoBack() {
+    goBack();
+  }
+
   return (
     <PlayersContainer>
-      <Header showBackButton />
+      <Header showBackButton onPress={handleGoBack} />
 
       <HighLight
         title="Nome da turma"
