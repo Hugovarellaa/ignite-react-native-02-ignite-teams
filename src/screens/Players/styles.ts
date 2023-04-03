@@ -20,7 +20,7 @@ export const HeaderList = styled.View`
   flex-direction: row;
   align-items: center;
 
-  margin: 32px 0 12px;
+  margin: 32px 0;
 `;
 
 export const NumberOfPlayers = styled.Text`
