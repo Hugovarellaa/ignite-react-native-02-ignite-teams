@@ -7,7 +7,7 @@ import {
 import theme from "@theme/index";
 import { StatusBar } from "react-native";
 import { ThemeProvider } from "styled-components/native";
-import { AppRoute } from "./src/routes";
+import { Routes } from "./src/routes";
 
 export default function App() {
   const [fontsLoading] = useFonts({
@@ -22,7 +22,7 @@ export default function App() {
         backgroundColor="transparent"
         barStyle="light-content"
       />
-      {fontsLoading ? <AppRoute /> : <Loading />}
+      {fontsLoading ? <Routes /> : <Loading />}
     </ThemeProvider>
   );
 }
