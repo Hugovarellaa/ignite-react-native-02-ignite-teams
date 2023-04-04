@@ -5,7 +5,7 @@
 <h1 align="center">
   <img src="./src/assets/turmas.png" width='200px'/>
   <img src="./src/assets/nova-turma.png " width='200px'/>
-  <!-- <img src="./src/assets/times.png" width='200px'/> -->
+  <img src="./src/assets/times.png" width='200px'/>
 </h1>
 
 <p align="center">
