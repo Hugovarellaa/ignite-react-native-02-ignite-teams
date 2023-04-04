@@ -29,7 +29,7 @@ export function NewGroup() {
       if (err instanceof AppError) {
         Alert.alert(
           "Novo Grupo",
-          "Não foi possível criar um novo grupo com esse nome, ele ja existir."
+          "Não foi possível criar um nova turma com esse nome, ele ja existir."
         );
 
         return;
